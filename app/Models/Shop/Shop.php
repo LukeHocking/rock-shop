@@ -1,6 +1,6 @@
 <?php
 
-namespace RockShop\Shop;
+namespace RockShop\Models\Shop;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -19,10 +19,10 @@ class Shop extends Model
     }
     
     public function ratings() {
-        return $this->hasMany('RockShop\Shop\Rating');
+        return $this->hasMany('RockShop\Models\Shop\Rating');
     }
     
     public function tags() {
-        return $this->hasMany('RockShop\Shop\Tag');
+        return $this->hasMany('RockShop\Models\Shop\ShopTag');
     }
 }

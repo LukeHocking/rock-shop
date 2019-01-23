@@ -5,7 +5,7 @@ namespace RockShop\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Tag extends Model
+class UserTag extends Model
 {
     use SoftDeletes;
     

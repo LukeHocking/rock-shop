@@ -35,6 +35,10 @@ class User extends Authenticatable
     }
     
     public function tags () {
-        return $this->hasMany('RockShop\Models\User\Tag');
+        return $this->hasMany('RockShop\Models\User\UserTag');
+    }
+    
+    public function shops () {
+        return $this->hasMany('RockShop\Models\Shop\Shop');
     }
 }

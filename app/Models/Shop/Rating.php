@@ -1,6 +1,6 @@
 <?php
 
-namespace RockShop\Shop;
+namespace RockShop\Models\Shop;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -15,7 +15,7 @@ class Rating extends Model
     ];
     
     public function shop() {
-        return $this->hasOne('RockShop\Shop\Shop');
+        return $this->hasOne('RockShop\Models\Shop\Shop');
     }
     
     public function user() {

@@ -35,9 +35,18 @@ class ShopService
 	
 	public function update(ShopRequest $request, $id)
 	{
-        $attributes = $request->all();
-        
-		$result = $this->shop->update($attributes);
+        $shop = $this->shop::find($id);
+		$shop->fill($request->all());
+		
+		$result = $shop->save();
+        if ($result == true) {
+            return back()
+                ->with(['status' => 'Shop Updated Successfully']);
+        }
+        else {
+            return back()
+                ->with(['errors' => 'Shop could not be updated']);
+        }
 	}
 	
 	public function delete($id)

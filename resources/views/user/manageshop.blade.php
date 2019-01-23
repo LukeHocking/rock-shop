@@ -22,7 +22,8 @@
                     @endif
                     
                     <h4>Shop Details</h4>
-                    <form method="PUT" action="{{ route('shop.update', $shop->id) }}">
+                    <form method="POST" action="{{ route('shop.update', $shop->id) }}">
+                        {{method_field('PUT')}}
                         @csrf
                         <input type='hidden' name='user_id' value='{{Auth::id()}}'>
 

@@ -40,9 +40,7 @@ class ShopController extends Controller
     
     public function update(ShopRequest $request, $id)
     {
-        $this->shop_service->update($request, $id);
-        return redirect()->route('home', ['shop' => Auth::id()])
-            ->with(['status' => 'Shop Updated Successfully']);
+        return $this->shop_service->update($request, $id);
     }
     
     public function delete($id)

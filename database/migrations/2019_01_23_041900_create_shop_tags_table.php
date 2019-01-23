@@ -16,10 +16,10 @@ class CreateShopTagsTable extends Migration
         Schema::create('shop_tags', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('weight');
             $table->integer('shop_id')->unsigned();
             $table->foreign('shop_id')->references('id')->on('shops');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

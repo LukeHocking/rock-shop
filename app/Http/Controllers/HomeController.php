@@ -35,4 +35,9 @@ class HomeController extends Controller
     {
         return view('user.myshops');
     }
+    
+    public function newshop()
+    {
+        return view('user.newshop');
+    }
 }

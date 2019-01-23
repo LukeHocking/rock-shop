@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard - {{ Auth::user()->username }}</div>
+                <div class="card-header">User Details - {{ Auth::user()->name }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -146,7 +146,7 @@
                     <h4>Current Profile Tags</h4>
                     @foreach (Auth::user()->tags as $tag)
                         Name: {{$tag->name}}, Weight: {{$tag->weight}}
-                        <form action="{{ route('tag.destroy', $tag->id) }}" method="POST">
+                        <form action="{{ route('usertag.destroy', $tag->id) }}" method="POST">
                            {{method_field('DELETE')}}
                            @csrf
                            <input type="submit" class="btn btn-danger" value="Delete"/>
@@ -154,7 +154,7 @@
                         <br>
                     @endforeach
                     Add New Tag:
-                    <form method="POST" action="{{ route('tag.store') }}">
+                    <form method="POST" action="{{ route('usertag.store') }}">
                         @csrf
                         <input type='hidden' name='user_id' value='{{Auth::id()}}'>
 

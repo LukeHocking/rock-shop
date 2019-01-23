@@ -1,21 +1,21 @@
 <?php
 
-namespace RockShop\Services\User;
+namespace RockShop\Services\Shop;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Redirector;
 use Illuminate\Support\Facades\Auth;
 
-use RockShop\Models\User\UserTag;
+use RockShop\Models\Shop\ShopTag;
 
-use RockShop\Http\Requests\User\TagRequest;
+use RockShop\Http\Requests\Shop\TagRequest;
 
 class TagService
 {
     protected $tag;
     
     // Constructor including loading references
-    public function __construct(UserTag $tag)
+    public function __construct(ShopTag $tag)
     {
         $this->tag = $tag;
     }

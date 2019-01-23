@@ -1,14 +1,14 @@
 <?php
 
-namespace RockShop\Http\Controllers\User;
+namespace RockShop\Http\Controllers\Shop;
 
 use Illuminate\Http\Request;
 use RockShop\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-use RockShop\Http\Requests\User\TagRequest;
-use RockShop\Services\User\TagService;
+use RockShop\Http\Requests\Shop\TagRequest;
+use RockShop\Services\Shop\TagService;
 
 class TagController extends Controller
 {
@@ -42,7 +42,7 @@ class TagController extends Controller
     {
         $this->tag_service->update($request, $id);
         return back()
-            ->with(['status' => 'Tag Updated Successfully']);
+            ->with(['status' => 'Tag Deleted Successfully']);
     }
     
     public function destroy($id)
@@ -54,6 +54,6 @@ class TagController extends Controller
     
     public function show($id)
     {
-        return redirect()->route('home', ['user' => Auth::id()]);
+        return redirect()->route('home', ['shop' => Auth::id()]);
     }
 }

@@ -26,8 +26,4 @@ class Shop extends Model
     public function tags() {
         return $this->hasMany('RockShop\Models\Shop\ShopTag');
     }
-    
-    public function products() {
-        return $this->hasMany('RockShop\Models\Product\Product');
-    }
 }

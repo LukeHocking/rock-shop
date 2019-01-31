@@ -109,6 +109,30 @@
                             </div>
                         </div>
                     </form>
+                    
+                    <h4>Current Products</h4>
+                    @foreach ($shop->products as $product)
+                        Name: {{$product->name}}, Price: {{$product->price}}, Amount: {{$product->amount}}
+                        <form action="{{ route('product.destroy', $tag->id) }}" method="POST">
+                           @csrf
+                            <form action="{{ route('product.show', $shop->id) }}" method="GET">
+                               @csrf
+                               <input type="submit" class="btn btn-primary" value="Edit"/>
+                            </form>
+                        </form>
+                        <br>
+                    @endforeach
+                    <form method="POST" action="{{ route('newproduct', $shop->id) }}">
+                        @csrf
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Add Product') }}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
